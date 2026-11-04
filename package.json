@@ -1,0 +1,23 @@
+{
+  "name": "online_bookstore_backend",
+  "version": "1.0.0",
+  "description": "Backend codebase of online bookstore",
+  "license": "ISC",
+  "author": "minh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mssql": "^12.7.13",
+    "sequelize": "^6.37.8"
+  }
+}
