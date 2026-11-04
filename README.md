@@ -30,3 +30,55 @@ The system is organized into four core domain modules, communicating strictly th
 * **Database & ORM:** Relational Database (SQL Server) with **Sequelize ORM** (supporting both model queries and optimized raw SQL window functions)
 * **Authentication & Security:** `jsonwebtoken` (JWT), `bcrypt`
 * **Architecture Pattern:** Modular Monolith (Feature-driven structure with Controller-Service layers)
+
+## Project structure
+```text
+online-bookstore-backend/
+  ├── README.md
+  ├── package.json
+  └── src/
+      ├── api/
+      │   └── customer-app/
+      │       ├── routes.js
+      │       └── server.js
+      ├── modules/
+      │   ├── auth/
+      │   │   ├── controllers/
+      │   │   │   └── AuthController.js
+      │   │   └── services/
+      │   │       └── AuthService.js
+      │   ├── catalog/
+      │   │   ├── index.js
+      │   │   ├── controllers/
+      │   │   │   └── BookController.js
+      │   │   ├── models/
+      │   │   │   ├── BookImageModel.js
+      │   │   │   ├── BookModel.js
+      │   │   │   └── CategoryModel.js
+      │   │   └── services/
+      │   │       └── BookService.js
+      │   ├── orders/
+      │   │   ├── controllers/
+      │   │   │   ├── CartController.js
+      │   │   │   └── OrderController.js
+      │   │   ├── model/
+      │   │   │   ├── CartModel.js
+      │   │   │   ├── OrderDeatilModel.js
+      │   │   │   └── OrderModel.js
+      │   │   └── services/
+      │   │       ├── CartService.js
+      │   │       └── OrderService.js
+      │   └── user/
+      │       ├── index.js
+      │       ├── controllers/
+      │       │   └── UserController.js
+      │       ├── model/
+      │       │   └── UserModel.js
+      │       └── services/
+      │           └── UserService.js
+      └── shared/
+          ├── database/
+          │   └── connection.js
+          └── middlewares/
+              └── jwtAuth.js
+```
