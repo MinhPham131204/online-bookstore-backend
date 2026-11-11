@@ -71,6 +71,21 @@ class OrderService {
 
         return affectedRows > 0;
     }
+
+    async findOrderById(orderId) {
+        const order = await OrderModel.findOne({
+            where: { orderID: orderId },
+        });
+        return order;
+    }
+
+    async updateOrderInfo(orderId, object) {
+        const [affectedRows] = await OrderModel.update(
+            object,
+            { where: { orderID: orderId } }
+        );
+        return affectedRows > 0;
+    }
 }
 
 module.exports = new OrderService();

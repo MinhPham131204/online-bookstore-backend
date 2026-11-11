@@ -6,6 +6,7 @@ const AuthController = require('../../modules/auth/controllers/authController');
 const BookController = require('../../modules/catalog/controllers/BookController');
 const OrderController = require('../../modules/orders/controllers/OrderController');
 const CartController = require('../../modules/orders/controllers/CartController');
+const PaymentController = require('../../modules/payment/controllers/VNPayController'); 
 
 const { requireLogin, verifyToken } = require('../../shared/middlewares/jwtAuth');
 
@@ -34,5 +35,9 @@ router.get('/order-info', requireLogin, verifyToken, OrderController.showOrderIn
 router.post('/order', requireLogin, verifyToken, OrderController.confirmOrder);
 router.get('/orders', requireLogin, verifyToken, OrderController.showOrderList);
 router.put('/orders/:id', requireLogin, verifyToken, OrderController.cancelOrder);
+
+// Payment routes
+router.post('/payment/vnpay', PaymentController.payment);
+router.get('/payment/vnpay/result', PaymentController.getResult);
 
 module.exports = router;
